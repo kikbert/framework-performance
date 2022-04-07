@@ -1,0 +1,29 @@
+version: "3.3"  
+services:
+  fast-api:
+    build: fast-api
+    ports:
+      - "8000:80"
+    volumes:
+      - ./fast-api:/code
+
+  express-js:
+    build: express-js
+    ports:
+      - "8001:3000"
+    volumes:
+      - ./express-js:/code
+
+  laravel:
+    build: laravel
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./laravel:/code
+
+  open-swoole:
+    build: open-swoole
+    ports:
+      - "8003:9501"
+    volumes:
+      - ./open-swoole:/code
